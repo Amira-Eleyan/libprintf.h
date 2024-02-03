@@ -6,26 +6,26 @@
 /*   By: aabdel-m <aabdel-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:23:04 by aabdel-m          #+#    #+#             */
-/*   Updated: 2024/02/01 18:10:12 by aabdel-m         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:44:26 by aabdel-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 'printf.h'
+#include "ft_printf.h"
 
-int ishex(unsigned int hex, char c)
+int	ft_ishex(unsigned int hex, char c)
 {
-	int	i;
-	
+	int			i;
+	const char	*hex_digits;
+
 	i = 0;
 	if (c == 'x')
-		const char hex_digits[] = "0123456789abcdef";
-	if (c == 'X')
-		const char hex_digits[] = "0123456789ABCDEF";
-	if (hex > 16)
+		hex_digits = "0123456789abcdef";
+	else
+		hex_digits = "0123456789ABCDEF";
+	if (hex >= 16)
 	{
-		ishex(hex / 16);
-		i++;
+		i += ft_ishex(hex / 16, c);
 	}
-	ft_putchar_fd(hex_digits[hex % 16],1);
-	return(i);
+	ft_character(hex_digits[hex % 16]);
+	return (i + 1);
 }

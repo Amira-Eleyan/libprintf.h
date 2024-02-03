@@ -6,19 +6,26 @@
 /*   By: aabdel-m <aabdel-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:19:58 by aabdel-m          #+#    #+#             */
-/*   Updated: 2024/02/01 18:10:32 by aabdel-m         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:44:12 by aabdel-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 'printf.h'
+#include "ft_printf.h"
 
-int isstrg(char *s)
+int	ft_isstrg(char *s)
 {
 	int	i;
 
 	i = 0;
-	ft_putstr_fd(s, 1);
-	while(*s)
+	while (s && *s)
+	{
+		ft_character(*s);
 		i++;
+		s++;
+	}
+	if (s == NULL)
+	{
+		i += write(1, "(null)", 6);
+	}
 	return (i);
 }

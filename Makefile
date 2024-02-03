@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Source files
-SRCS = ft_printf.c ft_ischaracter.c ft_isnumber.c isstrg.c ishex.c 
+SRCS = ft_printf.c ft_character.c ft_number.c ft_isstrg.c ft_ishex.c ft_unsigned.c ft_isptr.c
 
 
 
@@ -13,7 +13,7 @@ SRCS = ft_printf.c ft_ischaracter.c ft_isnumber.c isstrg.c ishex.c
 OBJS = $(SRCS:.c=.o)
 
 # Library name
-NAME = libftprintf.h
+NAME = libftprintf.a
 
 # Build rule
 all: $(NAME)

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_character.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdel-m <aabdel-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 16:13:41 by aabdel-m          #+#    #+#             */
-/*   Updated: 2024/02/01 18:10:58 by aabdel-m         ###   ########.fr       */
+/*   Created: 2024/02/03 15:30:17 by aabdel-m          #+#    #+#             */
+/*   Updated: 2024/02/03 17:44:55 by aabdel-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 'printf.h'
+#include "ft_printf.h"
 
-int ft_isnumber(int c)
+int	ft_character(int c)
 {
-	ft_putnbr_fd(c,1);
-	return(ft_strlen(itoa(c)));
+	write(1, &c, 1);
+	return (1);
 }
